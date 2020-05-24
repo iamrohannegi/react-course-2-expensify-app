@@ -82,5 +82,5 @@ export const startSetExpenses = () => {
                 
             dispatch(setExpenses(expenses));
         });
-    }
+     }
 } 

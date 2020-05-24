@@ -51,7 +51,7 @@ test('should setup edit expense action object', () => {
 //             id,
 //             updates
 //         });
-//         return database.ref(`expenses/${id}`).once(value);
+//         return database.ref(`users/${uid}/expenses/${id}`).once(value);
 //     }).then((snapshot) => {
 //         expect(snapshot.val().amount).toBe(updates.amount);
 //     })
@@ -76,7 +76,7 @@ test('should setup edit expense action object', () => {
 // });
 
 // test('should fetch the expenses from firebase', (done) => {
-//     const store = createMockStore({});
+//     const store = createMockStore(defaultAuthState);
 //     store.dispatch(startSetExpenses()).then(() => {
 //         const actions = store.getActions();
 //         expect(actions[0]).toEqual({
