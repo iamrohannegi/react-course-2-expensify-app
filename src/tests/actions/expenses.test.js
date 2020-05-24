@@ -3,6 +3,8 @@ import thunk from 'redux-thunk';
 import { startAddExpense, addExpense, editExpense, removeExpense, setExpenses, startSetExpenses, startEditExpense} from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 
+// const uid = 'thisismytestuid';
+// const defaultAuthState = { auth: { uid } };
 // const createMockStore = configureMockStore([thunk]);
 // import database from '../../firebase/firebase';
 
@@ -11,7 +13,7 @@ import expenses from '../fixtures/expenses';
 //     expenses.forEach(({id, description, note, amount, createdAt}) => {
 //         expensesData[id] = { description, note, amount, createdAt};
 //     });
-//     database.ref('expenses').set(expensesData).then(() => done());
+//     database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
 // });
 
 test('should setup remove expense action object', () => {
@@ -22,22 +24,22 @@ test('should setup remove expense action object', () => {
     });
 });
 
-// test('should setup edit expense action object', () => {
-//     const action = editExpense('123ab', {
-//         note: 'New note value'
-//     })
+test('should setup edit expense action object', () => {
+    const action = editExpense('123ab', {
+        note: 'New note value'
+    })
 
-//     expect(action).toEqual({
-//         type: 'EDIT_EXPENSE',
-//         id: '123ab',
-//         updates: {
-//             note: 'New note value'
-//         }
-//     });
-// });
+    expect(action).toEqual({
+        type: 'EDIT_EXPENSE',
+        id: '123ab',
+        updates: {
+            note: 'New note value'
+        }
+    });
+});
 
 // test('should edit expense from firebase', () => {
-//     const store = createMockStore({});
+//     const store = createMockStore(defaultAuthState);
 //     const id  = expense[0].id;
 //     const updates = {
 //         amount: 3000
